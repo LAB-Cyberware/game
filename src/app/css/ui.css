@@ -34,12 +34,13 @@
             border-bottom: 2px solid #bdc3c7; /* Borde para separación visual */
         }
         .city-map-grid {
-            width: 100%;
+            width: 18%;
             height: 100%;
             display: flex;
             flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
             justify-content: space-around; /* Distribuye el espacio entre elementos */
             align-content: space-around; /* Distribuye el espacio entre líneas */
+            column-gap: 25px;
         }
         .city-build {
             /* Cada cityBuild ocupa 18% del contenedor cityMap */
