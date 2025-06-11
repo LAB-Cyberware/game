@@ -31,16 +31,16 @@
             align-items: center;
             justify-content: center;
             padding: 1%; /* Pequeño padding para que no se pegue a los bordes */
-            border-bottom: 2px solid #bdc3c7; /* Borde para separación visual */
+            border-bottom: 1px solid #bdc3c7; /* Borde para separación visual */
         }
         .city-map-grid {
-            width: 18%;
+            width: 100%;
             height: 100%;
             display: flex;
             flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
-            justify-content: space-around; /* Distribuye el espacio entre elementos */
-            align-content: space-around; /* Distribuye el espacio entre líneas */
-            column-gap: 25px;
+            justify-content: center; /* Distribuye el espacio entre elementos */
+            align-content: center; /* Distribuye el espacio entre líneas */
+            row-gap: 5%;
         }
         .city-build {
             /* Cada cityBuild ocupa 18% del contenedor cityMap */
@@ -49,8 +49,8 @@
             /* Tailwind no maneja esto directamente con 'gap' en porcentajes de esta forma, */
             /* por lo que 'space-around' en el contenedor padre es una buena aproximación. */
             /* O se puede usar 'margin' en cada elemento. */
-            width: 20%;
-            height: 20%;
+            width: 30%;
+            height: 27%;
             background-color: #95a5a6; /* Color de ejemplo para cityBuild */
             color: white;
             display: flex;
@@ -59,7 +59,7 @@
             border-radius: 8px; /* Bordes redondeados */
             font-size: 0.7rem;
             text-align: center;
-            margin:2%;
+            margin: auto;
         }
         .menu-container {
             height: 20%;
@@ -122,3 +122,35 @@
         .gobiernoBuild {background-image: url('../../../public/ofices/gobierno-alta.png');}
         .exploracionBuild {background-image: url('../../../public/ofices/exploracion-alta.png');}
         .hotelBuild {background-image: url('../../../public/ofices/home-alta.png');}
+
+         @media (min-width: 768px) { /* Para pantalla de PC/Tablet */
+            .main-container {
+                flex-direction: row; /* Los elementos principales se ordenan en fila */
+                flex-wrap: wrap;     /* Permite que los elementos se envuelvan */
+            }
+
+            .city-map {
+                width: 50%;
+                height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+                order: 1; /* Aparece primero */
+                border-bottom: none; /* Sin borde inferior */
+            }
+            
+            .space-map {
+                width: 50%;
+                height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+                order: 2; /* Aparece segundo */
+                border-bottom: none; /* Sin borde inferior */
+                border-left: 2px solid #2c3e50; /* Borde izquierdo para la separación visual */
+            }
+
+            .menu-container {
+                width: 100%;
+                height: 20vh; /* Ocupa el 20% de la altura de la pantalla */
+                order: 3; /* Aparece al final */
+            }
+
+            .city-build {
+                height: 27%; /* Ajuste de altura para la vista de PC/Tablet */
+            }
+        }

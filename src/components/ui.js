@@ -1,4 +1,5 @@
 import "../app/css/ui.css";
+import "../components/modal.js";
 export default function UI(){
     return(
         <>
@@ -11,6 +12,7 @@ export default function UI(){
 
         <div className="city-map">
             <div className="city-map-grid">
+                <Modal>
                 <div className="city-build mineriaBuild">CB 1</div>
                 <div className="city-build construccionBuild">CB 5</div>
                 <div className="city-build hotelBuild">CB 11</div>
@@ -20,6 +22,7 @@ export default function UI(){
                 <div className="city-build miliciaBuild">CB 21</div>
                 <div className="city-build">CB 22</div>
                 <div className="city-build fabricaBuild">CB 25</div>
+                </Modal>
             </div>
         </div>
 
