@@ -1,5 +1,5 @@
 import "../app/css/ui.css";
-import "../components/modal.js";
+import "../components/builds";
 export default function UI(){
     return(
         <>
@@ -12,17 +12,33 @@ export default function UI(){
 
         <div className="city-map">
             <div className="city-map-grid">
-                <Modal>
-                <div className="city-build mineriaBuild">CB 1</div>
-                <div className="city-build construccionBuild">CB 5</div>
-                <div className="city-build hotelBuild">CB 11</div>
-                <div className="city-build gobiernoBuild">CB 13</div>
-                <div className="city-build exploracionBuild">CB 15</div>
-                <div className="city-build">CB 17</div>
-                <div className="city-build miliciaBuild">CB 21</div>
-                <div className="city-build">CB 22</div>
-                <div className="city-build fabricaBuild">CB 25</div>
-                </Modal>
+                <div className="city-build mineriaBuild">
+                    <button id="mineria">CB 1</button>
+                </div>
+                <div className="city-build construccionBuild">
+                    <button id="construccion">CB 5</button>
+                </div>
+                <div className="city-build hotelBuild">
+                    <button id="hotel">CB 11</button>
+                </div>
+                <div className="city-build gobiernoBuild">
+                    <button id="gobierno">CB 13</button>
+                </div>
+                <div className="city-build exploracionBuild">
+                    <button id="exploracion">CB 15</button>
+                </div>
+                <div className="city-build">
+                    <button id="desconocido"></button>CB 17
+                </div>
+                <div className="city-build miliciaBuild">
+                    <button id="milicia">CB 21</button>
+                </div>
+                <div className="city-build">
+                    <button id="desconocido">CB 22</button>
+                </div>
+                <div className="city-build fabricaBuild">
+                    <button id="fabrica">CB 25</button>
+                </div>
             </div>
         </div>
 
