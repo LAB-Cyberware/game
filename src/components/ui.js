@@ -1,5 +1,4 @@
 import "../app/css/ui.css";
-import "../components/builds";
 export default function UI(){
     return(
         <>
