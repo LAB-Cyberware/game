@@ -1,5 +1,12 @@
+'use client';
+
 import "../app/css/ui.css";
+import { useBuildingModal } from "./buildsModal";
+
 export default function UI(){
+    const { open, ModalComponent } = useBuildingModal();
+
+
     return(
         <>
 
@@ -11,8 +18,10 @@ export default function UI(){
 
         <div className="city-map">
             <div className="city-map-grid">
-                <div className="city-build mineriaBuild">
-                    <button id="mineria">CB 1</button>
+                <div 
+                    className="city-build mineriaBuild" 
+                    onClick={() => open('mineria')}>
+                CB 1
                 </div>
                 <div className="city-build construccionBuild">
                     <button id="construccion">CB 5</button>
@@ -27,7 +36,7 @@ export default function UI(){
                     <button id="exploracion">CB 15</button>
                 </div>
                 <div className="city-build">
-                    <button id="desconocido"></button>CB 17
+                    <button id="desconocido">CB 17</button>
                 </div>
                 <div className="city-build miliciaBuild">
                     <button id="milicia">CB 21</button>
@@ -88,5 +97,6 @@ export default function UI(){
     </div>
 
 </>
+
     )
 }

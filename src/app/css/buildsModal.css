@@ -1,0 +1,38 @@
+.buildingModalStyle {
+    position: fixed;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.buildingModalInStyle {
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 448px;
+    margin: 16px;
+    color: slateblue;
+    width: 100%;
+    margin: 16px;
+}
+.buildingModalInTopStyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.buildingModalInNameStyle {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+}
+.buildingModalInExitStyle {
+    color: grey
+}
+.buildingModalInExitStyle:hover {
+    color: white;
+}
+.buildingModalInDescStyle {
+    display: flex;
+    justify-content: space-between;
+}
