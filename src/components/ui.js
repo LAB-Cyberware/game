@@ -1,5 +1,22 @@
+"use client";
 import "../app/css/ui.css";
+import { useState } from "react";
+import BuildsModal from "./buildsModal";
 export default function UI(){
+
+    const [selectedBuilding, setSelectedBuilding] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleBuildingClick = (buildingType) => {
+        setSelectedBuilding(buildingType);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedBuilding(null);
+    };
+
     return(
         <>
 
@@ -12,31 +29,31 @@ export default function UI(){
         <div className="city-map">
             <div className="city-map-grid">
                 <div className="city-build mineriaBuild">
-                    <button id="mineria">CB 1</button>
+                    <button id="mineria" onClick={() => handleBuildingClick('minería')}>CB 1</button>
                 </div>
                 <div className="city-build construccionBuild">
-                    <button id="construccion">CB 5</button>
+                    <button id="construccion" onClick={() => handleBuildingClick('construccion')}>CB 5</button>
                 </div>
                 <div className="city-build hotelBuild">
-                    <button id="hotel">CB 11</button>
+                    <button id="hotel" onClick={() => handleBuildingClick('hotel')}>CB 11</button>
                 </div>
                 <div className="city-build gobiernoBuild">
-                    <button id="gobierno">CB 13</button>
+                    <button id="gobierno" onClick={() => handleBuildingClick('gobierno')}>CB 13</button>
                 </div>
                 <div className="city-build exploracionBuild">
-                    <button id="exploracion">CB 15</button>
+                    <button id="exploracion" onClick={() => handleBuildingClick('exploracion')}>CB 15</button>
                 </div>
                 <div className="city-build">
-                    <button id="desconocido"></button>CB 17
+                    <button id="desconocido" onClick={() => handleBuildingClick('desconocido')}></button>CB 17
                 </div>
                 <div className="city-build miliciaBuild">
-                    <button id="milicia">CB 21</button>
+                    <button id="milicia" onClick={() => handleBuildingClick('milicia')}>CB 21</button>
                 </div>
                 <div className="city-build">
-                    <button id="desconocido">CB 22</button>
+                    <button id="desconocido" onClick={() => handleBuildingClick('desconocido')}>CB 22</button>
                 </div>
                 <div className="city-build fabricaBuild">
-                    <button id="fabrica">CB 25</button>
+                    <button id="fabrica" onClick={() => handleBuildingClick('fabrica')}>CB 25</button>
                 </div>
             </div>
         </div>
@@ -86,6 +103,13 @@ export default function UI(){
             </div>
         </div>
     </div>
+    
+    {isModalOpen && (
+                <BuildsModal 
+                    buildingType={selectedBuilding} 
+                    onClose={closeModal} 
+                />
+            )}
 
 </>
     )
