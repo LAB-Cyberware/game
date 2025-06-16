@@ -5,7 +5,7 @@ function BuildsModal({ buildingType, onClose }) {
     const buildingsData = {
         minería: {
             name: "Minería",
-            description: "Lugar de extracción y procesamiento de minerales"
+            description: "Lugar de extracción y procesamiento de minerales."
         },
         construccion: {
             name: "Construcción",
@@ -47,18 +47,18 @@ function BuildsModal({ buildingType, onClose }) {
     };
     
     return (
-        <div className="modal-overlay" onClick={handleOverlayClick}>
-            <div className="modal-content">
-                <div className="modal-header">
+        <div className="modal-build-general" onClick={handleOverlayClick}>
+            <div className="modal-build-content">
+                <div className="modal-build-top">
                     <h2>{currentBuilding.name}</h2>
-                    <button className="modal-close" onClick={onClose}>
+                    <button className="modal-build-close" onClick={onClose}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
                 
-                <div className="modal-body">
+                <div className="modal-build-bottom">
                     <p>{currentBuilding.description}</p>
                 </div>
             </div>

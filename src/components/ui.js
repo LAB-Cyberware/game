@@ -28,33 +28,42 @@ export default function UI(){
 
         <div className="city-map">
             <div className="city-map-grid">
-                <div className="city-build mineriaBuild">
-                    <button id="mineria" onClick={() => handleBuildingClick('minería')}>CB 1</button>
-                </div>
-                <div className="city-build construccionBuild">
-                    <button id="construccion" onClick={() => handleBuildingClick('construccion')}>CB 5</button>
-                </div>
-                <div className="city-build hotelBuild">
-                    <button id="hotel" onClick={() => handleBuildingClick('hotel')}>CB 11</button>
-                </div>
-                <div className="city-build gobiernoBuild">
-                    <button id="gobierno" onClick={() => handleBuildingClick('gobierno')}>CB 13</button>
-                </div>
-                <div className="city-build exploracionBuild">
-                    <button id="exploracion" onClick={() => handleBuildingClick('exploracion')}>CB 15</button>
-                </div>
-                <div className="city-build">
-                    <button id="desconocido" onClick={() => handleBuildingClick('desconocido')}></button>CB 17
-                </div>
-                <div className="city-build miliciaBuild">
-                    <button id="milicia" onClick={() => handleBuildingClick('milicia')}>CB 21</button>
-                </div>
-                <div className="city-build">
-                    <button id="desconocido" onClick={() => handleBuildingClick('desconocido')}>CB 22</button>
-                </div>
-                <div className="city-build fabricaBuild">
-                    <button id="fabrica" onClick={() => handleBuildingClick('fabrica')}>CB 25</button>
-                </div>
+                <button className="city-build mineriaBuild" 
+                onClick={() => handleBuildingClick('minería')}>
+                    CB 1
+                </button>
+                <button className="city-build construccionBuild" 
+                onClick={() => handleBuildingClick('construccion')}>
+                    CB 5
+                </button>
+                <button className="city-build hotelBuild" 
+                onClick={() => handleBuildingClick('hotel')}>
+                    CB 11
+                </button>
+                <button className="city-build gobiernoBuild" 
+                onClick={() => handleBuildingClick('gobierno')}>
+                    CB 13
+                </button>
+                <button className="city-build exploracionBuild" 
+                onClick={() => handleBuildingClick('exploracion')}>
+                   CB 15
+                </button>
+                <button className="city-build" 
+                onClick={() => handleBuildingClick('desconocido')}>
+                   CB 17
+                </button>
+                <button className="city-build miliciaBuild" 
+                onClick={() => handleBuildingClick('milicia')}>
+                    CB 21
+                </button>
+                <button className="city-build" 
+                onClick={() => handleBuildingClick('desconocido')}>
+                    CB 22
+                </button>
+                <button className="city-build fabricaBuild" 
+                onClick={() => handleBuildingClick('fabrica')}>
+                    CB 25
+                </button>
             </div>
         </div>
 
