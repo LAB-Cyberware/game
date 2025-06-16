@@ -28,7 +28,7 @@
 }
 
 .modal-build-top {
-    background-color: #34495e;
+    background-color: #3498db;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -59,6 +59,7 @@
 
 .modal-build-bottom {
     padding: 20px;
+    background-color: #2980b9;
 }
 
 

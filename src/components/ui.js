@@ -1,17 +1,39 @@
 "use client";
 import "../app/css/ui.css";
-import { useState } from "react";
+import { useState } from "react"; /* Uso de estados a través de React */
 import BuildsModal from "./buildsModal";
 export default function UI(){
 
+    /* selectedBuilding representa el estado inicial */
+    /* setSelectedBuilding representa el cambio de estado (al seleccionar edificio) */
+    /* useState(null) dice que el estado inicial es nulo (no se está seleccionando edificio) */
     const [selectedBuilding, setSelectedBuilding] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    /* isModalOpen representa el estado inicial */
+    /* setIsModalOpen representa el cambio de estado (se abre el Modal) */
+    /* useState(false) dice que el estado inicial es falso (no está abierto el Modal) */
 
+
+    /* handleBuildingClick toma el momento que se pulsa en un edificio, mientras que el "=" dice
+    que esto significa que buildingType toma el edificio especifico que se está pulsando. La 
+    función flecha(=>) dice que al ya tomar el edificio ocurre lo de debajo del const */
+    /* setSelectedBuilding(buildingType) es el cambio de estado por selección de edificio, en
+    este caso se deja claro que se está pulsando sobre un edificio específico, por lo que debe
+    mostrar la información de aquel edificio */
+    /* setIsModalOpen(true) es el cambio de estado del Modal al seleccionar un edificio, en este
+    caso cambia a "true", que significa que debería abrir el Modal */
     const handleBuildingClick = (buildingType) => {
         setSelectedBuilding(buildingType);
         setIsModalOpen(true);
     };
 
+    /* closeModal toma el momento cuando se cierra el Modal, acá no se toma un edificio
+    especifico ni nada, solo el momento que se cierra. La función flecha dice que en el momento de
+    cierre ocurre lo de debajo del const (lo que va a ocurrir) */
+    /* setIsModalOpen(false) es el cambio de estado del Modal, en este caso, indica que este se
+    debe cerrar gracias al (false) */
+    /* setSelectedBuilding(null) es el cambio de estado de la selección de edificio, que en este
+    caso dice "null", osease, al cerrar no se debe mostrar la información del edificio */
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedBuilding(null);
@@ -28,8 +50,11 @@ export default function UI(){
 
         <div className="city-map">
             <div className="city-map-grid">
-                <button className="city-build mineriaBuild" 
-                onClick={() => handleBuildingClick('minería')}>
+                <button className="city-build mineriaBuild"
+                onClick={() => handleBuildingClick('minería')} /* onClick indica que al estar
+                pulsando sobre el "button", este, con la función flecha dirá que debe tomar al
+                respectivo edificio que se está pulsando, y así ejecutar el componente del Modal
+                y mostrar la información del respectivo edificio que se está pulsando */>
                     CB 1
                 </button>
                 <button className="city-build construccionBuild" 
@@ -117,6 +142,14 @@ export default function UI(){
                 <BuildsModal 
                     buildingType={selectedBuilding} 
                     onClose={closeModal} 
+                /* isModalOpen && es una condición para que pueda ocurrir lo de debajo suyo, lo
+                que prosigue a aquel momento donde se abre el modal */
+                /* BuildsModal llama a la respectiva función ubicada en buildsModal.js */
+                /* buildingType={selectedBuilding} indica que en el momento que se abre el Modal 
+                también debe tomar el respectivo edificio que se pulsó y así poder mostrar su
+                información */
+                /* onClose={closeModal} indica que ahora que se abrió el Modal, también es posible 
+                cerrarlo. Básicamente, selectedBuilding y closeModal son props(propiedades) */
                 />
             )}
 
