@@ -1,5 +1,7 @@
 import React from 'react'
 import '../app/css/buildsModal.css'
+import { useState } from "react";
+import MissionsModal from './missionsModal';
 
 /* BuildsModal es el componente en sí */
 /* buildingType y onClose son los props que son recibidos desde el componente padre,
@@ -7,6 +9,19 @@ osea, UI de ui.js. Para este caso se trataría del recibimiento de la selección
 edificio y de la función para cerrar el Modal, estos necesitados para el
 funcionamiento del componente. */
 function BuildsModal({ buildingType, onClose }) { 
+    const [selectedMission, setSelectedMission] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleMissionClick = (missionType) => {
+        setSelectedMission(missionType);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedMission(null);
+    };
+
     /* buildingsData actúa como si fuese una base de datos, posee los datos de cada
     edificio para así, estos mismos datos ser mostrados en el Modal. */
     const buildingsData = {
@@ -15,7 +30,9 @@ function BuildsModal({ buildingType, onClose }) {
         /* name y description son valores llamables a través de la clave. */
         minería: {
             name: "Minería",
-            description: "Lugar de extracción y procesamiento de minerales."
+            description: "Lugar de extracción y procesamiento de minerales.",
+            mission: "Misión 1 [Extracción de Minerales]",
+            missionType: "minería_mission"
         },
         construccion: {
             name: "Construcción",
@@ -76,9 +93,7 @@ function BuildsModal({ buildingType, onClose }) {
     };
     
     return (
-        /* El className "modal-build-overlay* que posee los estilos del buildsModal.css,
-        pero que, con el onClick dice que si se pulsa justo en este overlay, el Modal se
-        cierra. */
+        <>
         <div className="modal-build-overlay" onClick={handleOverlayClick}>
             <div className="modal-build-content">
                 <div className="modal-build-top">
@@ -96,11 +111,26 @@ function BuildsModal({ buildingType, onClose }) {
                     </button>
                 </div>
                 
-                <div className="modal-build-bottom">
+                <div className="modal-build-description">
                     <p>{currentBuilding.description}</p>
                 </div>
+
+                {currentBuilding.mission && (
+                        <div className="modal-build-mission" 
+                             onClick={() => handleMissionClick(currentBuilding.missionType)}>
+                            <button>{currentBuilding.mission}</button>
+                        </div>
+                    )}
             </div>
         </div>
+
+        {isModalOpen && (
+                <MissionsModal
+                    missionType={selectedMission}
+                    onClose={closeModal} 
+                />
+            )}
+        </>
     )
 }
 
