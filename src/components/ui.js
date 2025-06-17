@@ -53,8 +53,10 @@ export default function UI(){
                 <button className="city-build mineriaBuild"
                 onClick={() => handleBuildingClick('minería')} /* onClick indica que al estar
                 pulsando sobre el "button", este, con la función flecha dirá que debe tomar al
-                respectivo edificio que se está pulsando, y así ejecutar el componente del Modal
-                y mostrar la información del respectivo edificio que se está pulsando */>
+                respectivo edificio que se está pulsando (ejecutará el handleBuildingClick al
+                pasar el paramentro del edificio pulsado al componente), y así ejecutar el 
+                componente del Modal y mostrar la información del respectivo edificio que se 
+                está pulsando. */>
                     CB 1
                 </button>
                 <button className="city-build construccionBuild" 

@@ -1,6 +1,6 @@
 /* modal.css - Estilos específicos para el modal de edificios */
 
-.modal-build-general {
+.modal-build-overlay {
     position: fixed;
     top: 0;
     left: 0;
