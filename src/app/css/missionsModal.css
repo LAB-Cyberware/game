@@ -1,0 +1,111 @@
+.modal-mission-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-mission-top {
+    background-color: #3498db;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #4a5f7a;
+    justify-content: center;
+}
+
+.modal-mission-content {
+    background-color: #2980b9;
+    color: white;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+}
+
+.modal-mission-description {
+    padding: 20px;
+    background-color: #2980b9;
+}
+
+.modal-mission-buttons {
+    display: flex;
+}  
+
+.modal-mission-accept {
+    padding: 7px;
+    text-align: center;
+    background-color: #284e8c;
+    color: rgb(255, 255, 255);
+    border: 1.5px solid white;
+    max-width: 25vw;
+    width: 75px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: small;
+    border-radius: 12px;
+}
+
+.modal-mission-accept:hover {
+    color: yellow;
+}
+
+.modal-mission-exit {
+    padding: 7px;
+    text-align: center;
+    background-color: #284e8c;
+    color: rgb(255, 255, 255);
+    border: 1.5px solid white;
+    max-width: 25vw;
+    width: 75px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: small;
+    transition: background-color 0.2s;
+    border-radius: 12px;
+}
+
+.modal-mission-exit:hover {
+    color: yellow;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive para modal */
+@media (max-width: 768px) {
+    .modal-build-content {
+        width: 95vw;
+        margin: 20px;
+    }
+}

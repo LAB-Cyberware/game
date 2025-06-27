@@ -24,16 +24,14 @@ function MissionsModal({ missionType, onClose }) {
                     <h2>{currentMission.name}</h2>
                 </div>
                 
-                <div className="modal-mission-place">
+                <div className="modal-mission-description">
                     <p>Lugar: {currentMission.place}</p>
-                </div>
-                <div className="modal-mission-reward">
                     <p>Recompensa: {currentMission.reward}</p>
                 </div>
                 
-                <span>
-                    <button>Aceptar</button>
-                    <button>Salir</button>
+                <span className='modal-mission-buttons'>
+                    <button className='modal-mission-accept'>Aceptar</button>
+                    <button className='modal-mission-exit' onClick={onClose}>Salir</button>
                  </span>
             </div>
         </div>
