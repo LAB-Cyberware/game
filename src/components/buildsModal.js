@@ -36,31 +36,45 @@ function BuildsModal({ buildingType, onClose }) {
         },
         construccion: {
             name: "Construcción",
-            description: "Recinto encargado de diferentes actividades de construcción."
+            description: "Recinto encargado de diferentes actividades de construcción.",
+            mission: "Misión 1 [Fabricación de Muebles]",
+            missionType: "construccion_mission"
         },
         hotel: {
             name: "Hotel",
-            description: "Dominio que puede alojar a personas con suma comodidad."
+            description: "Dominio que puede alojar a personas con suma comodidad.",
+            mission: "Misión 1 [Hospedaje de Turistas]",
+            missionType: "hotel_mission"
         },
         gobierno: {
             name: "Gobierno",
-            description: "Establecimiento con acceso público a los funcionarios gubernamentales."
+            description: "Establecimiento con acceso público a los funcionarios gubernamentales.",
+            mission: "Misión 1 [Tramites Ciudadanos]",
+            missionType: "gobierno_mission"
         },
         exploracion: {
             name: "Exploración",
-            description: "Estructura que recibe cualquier espíritu aventurero."
+            description: "Estructura que recibe cualquier espíritu aventurero.",
+            mission: "Misión 1 [Visita a Edificio Abandonado]",
+            missionType: "exploracion_mission"
         },
         desconocido: {
             name: "???",
-            description: "???"
+            description: "???",
+            mission: "???",
+            missionType: "desconocido_mission"
         },
         milicia: {
             name: "Milicia",
-            description: "Cuartel compuesto de militares armados y preparados ante cualquier emergencia."
+            description: "Cuartel compuesto de militares armados y preparados ante cualquier emergencia.",
+            mission: "Misión 1 [Servicio de Guardia en Base Militar]",
+            missionType: "milicia_mission"
         },
         fabrica: {
-            name: "Fabrica",
-            description: "El hogar de diversos materiales necesarios para la elaboración y producción de gran cantidad de objetos o servicios."
+            name: "Fábrica",
+            description: "El hogar de diversos materiales necesarios para la elaboración y producción de gran cantidad de objetos o servicios.",
+            mission: "Misión 1 [Limpieza de Fábrica]",
+            missionType: "fabrica_mission"
         }
     };
 

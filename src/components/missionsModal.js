@@ -6,6 +6,41 @@ function MissionsModal({ missionType, onClose }) {
             name: "Extracción de Minerales",
             place: "Minería",
             reward: "$10"
+        },
+        construccion_mission: {
+            name: "Fabricación de Muebles",
+            place: "Construcción",
+            reward: "$10"
+        },
+        hotel_mission: {
+            name: "Hospedaje de Turistas",
+            place: "Hotel",
+            reward: "$10"
+        },
+        gobierno_mission: {
+            name: "Tramites Ciudadanos",
+            place: "Gobierno",
+            reward: "$10"
+        },
+        exploracion_mission: {
+            name: "Visita a Edificio Abandonado",
+            place: "Exploración",
+            reward: "$10"
+        },
+        desconocido_mission: {
+            name: "???",
+            place: "???",
+            reward: "???"
+        },
+        milicia_mission: {
+            name: "Servicio de Guardia en Base Militar",
+            place: "Milicia",
+            reward: "$10"
+        },
+        fabrica_mission: {
+            name: "Limpieza de Fábrica",
+            place: "Fábrica",
+            reward: "$10"
         }
     }
 

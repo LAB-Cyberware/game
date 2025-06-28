@@ -27,7 +27,7 @@
     color: white;
     border-radius: 12px;
     padding: 0;
-    max-width: 90vw;
+    width: 25vw;
     max-height: 90vh;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     animation: slideIn 0.3s ease-out;
@@ -104,8 +104,8 @@
 
 /* Responsive para modal */
 @media (max-width: 768px) {
-    .modal-build-content {
-        width: 95vw;
+    .modal-mission-content {
+        width: 80vw;
         margin: 20px;
     }
 }

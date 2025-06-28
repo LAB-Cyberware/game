@@ -14,10 +14,6 @@
     animation: fadeIn 0.3s ease-out;
 }
 
-.modal-build-overlay:active {
-    animation: fadeOut 0.3s ;
-}
-
 .modal-build-content {
     background-color: #2980b9;
     color: white;
@@ -72,7 +68,7 @@
     background-color: #284e8c;
     color: rgb(255, 255, 255);
     border: 1.5px solid white;
-    max-width: 75vw;
+    width: 28vw;
     margin: auto;
     margin-bottom: 10px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -117,7 +113,7 @@
 @keyframes slideOut {
     from {
         opacity: 1;
-        text-replace: translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
     to {
         opacity: 0;
@@ -130,5 +126,9 @@
     .modal-build-content {
         width: 95vw;
         margin: 20px;
+    }
+    
+    .modal-build-mission {
+        width: 80vw;
     }
 }
