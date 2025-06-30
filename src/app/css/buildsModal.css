@@ -11,7 +11,18 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+/* el "." para continuar con fade-in indica que solo los elementos que tengan
+activadas ambas clases, osea, modal-build-overlay y fade-in podrán activar la animación
+"fadeIn". Se podría decir que es para agrupar ambas clases. Lo mismo aplica para los
+demás agrupados. */
+.modal-build-overlay.fade-in {
     animation: fadeIn 0.3s ease-out;
+}
+
+.modal-build-overlay.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
 }
 
 .modal-build-content {
@@ -23,8 +34,15 @@
     max-height: 90vh;
     width: 400px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: slideIn 0.3s ease-out;
     overflow: hidden;
+}
+
+.modal-build-content.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+.modal-build-content.slide-out { 
+    animation: slideOut 0.3s ease-out forwards;
 }
 
 .modal-build-top {
