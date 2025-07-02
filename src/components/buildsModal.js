@@ -141,7 +141,9 @@ function BuildsModal({ buildingType, onClose }) {
     
     return (
         <>
-        <div className={`modal-build-overlay ${isVisible ? 'fade-in' : ''} ${isClosing ? 'fade-out' : ''}`}
+        <div className={`modal-build-overlay 
+        ${isVisible ? 'fade-in' : ''} 
+        ${isClosing ? 'fade-out' : ''}`}
         /* Los {} están agrupando el contenido de forma compacta y así no implementar 
         tanto código. Y los `` sirven para poder usar expresiones JavaScript dentro del
         contenido agrupado. */ 
@@ -153,7 +155,9 @@ function BuildsModal({ buildingType, onClose }) {
         /* ${isClosing ? 'fade-out'} : ''} indica que al momento de que el Modal se esté
         cerrando, osea, el isClosing pase a true, este active la animación de fade-out */
         onClick={handleOverlayClick}>
-            <div className={`modal-build-content ${isVisible ? 'slide-in' :''} ${isClosing ? 'slide-out' : ''}`}
+            <div className={`modal-build-content 
+            ${isVisible ? 'slide-in' :''} 
+            ${isClosing ? 'slide-out' : ''}`}
             /* El mismo funcionamiento que con el modal-build-overlay, pero en el
             modal-build-content y cambiando los fade-in y fade-out por slide-in y
             slide-out. */>

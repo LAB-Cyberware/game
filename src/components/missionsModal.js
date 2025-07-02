@@ -1,4 +1,5 @@
 import '../app/css/missionsModal.css'
+import { useState } from 'react';
 
 function MissionsModal({ missionType, onClose }) {
     const missionsData = {
@@ -44,17 +45,35 @@ function MissionsModal({ missionType, onClose }) {
         }
     }
 
+    const [isClosing, setIsClosing] = useState(false);
+    const [isVisible] = useState(true);
+
     const handleOverlayClick = (e) => {
         if (e.target === e.currentTarget) {
+            setIsClosing(true);
+            setTimeout(() => {
+                onClose();
+            }, 300);
+            }
+    };
+
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(() => {
             onClose();
-        }
+        }, 300);
     };
 
     const currentMission = missionsData[missionType] || missionsData.desconocido_mission;
 
     return (
-        <div className="modal-mission-overlay" onClick={handleOverlayClick}>
-            <div className="modal-mission-content">
+        <div className={`modal-mission-overlay 
+        ${isVisible ? 'fade-in' : ''} 
+        ${isClosing ? 'fade-out' : ''}`} 
+        onClick={handleOverlayClick}>
+            <div className={`modal-mission-content 
+                ${isVisible ? 'slide-in' :''} 
+                ${isClosing ? 'slide-out' : ''}`}>
                 <div className="modal-mission-top">
                     <h2>{currentMission.name}</h2>
                 </div>
@@ -66,7 +85,7 @@ function MissionsModal({ missionType, onClose }) {
                 
                 <span className='modal-mission-buttons'>
                     <button className='modal-mission-accept'>Aceptar</button>
-                    <button className='modal-mission-exit' onClick={onClose}>Salir</button>
+                    <button className='modal-mission-exit' onClick={handleClose}>Salir</button>
                  </span>
             </div>
         </div>
