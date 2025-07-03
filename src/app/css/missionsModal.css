@@ -1,6 +1,4 @@
-/* modal.css - Estilos específicos para el modal de edificios */
-
-.modal-build-overlay {
+.modal-mission-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,82 +9,67 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-/* el "." para continuar con fade-in indica que solo los elementos que tengan
-activadas ambas clases, osea, modal-build-overlay y fade-in podrán activar la animación
-"fadeIn". Se podría decir que es para agrupar ambas clases. Lo mismo aplica para los
-demás agrupados. */
-.modal-build-overlay.fade-in {
     animation: fadeIn 0.3s ease-out;
 }
 
-.modal-build-overlay.fade-out {
+.modal-mission-overlay.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* forwards logra que se mantengan los valores finales de la animación, para el presente
+caso, que el Modal se mantenga cerrado después de finalizar la animación, pues lo
+último de la animación es que el Modal se cierra. */
+.modal-mission-overlay.fade-out {
     animation: fadeOut 0.3s ease-out forwards;
 }
 
-.modal-build-content {
+.modal-mission-content {
     background-color: #2980b9;
     color: white;
     border-radius: 12px;
     padding: 0;
-    max-width: 90vw;
+    width: 25vw;
     max-height: 90vh;
-    width: 400px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease-out;
     overflow: hidden;
 }
 
-.modal-build-content.slide-in {
+.modal-mission-content.slide-in {
     animation: slideIn 0.3s ease-out;
 }
 
-.modal-build-content.slide-out { 
+.modal-mission-content.slide-out {
     animation: slideOut 0.3s ease-out forwards;
 }
 
-.modal-build-top {
+.modal-mission-top {
     background-color: #3498db;
     padding: 20px;
     display: flex;
     align-items: center;
     text-align: center;
     border-bottom: 1px solid #4a5f7a;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.modal-build-close {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-    align-content: space-between;
-}
-
-.modal-build-close:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.modal-build-close svg {
-    width: 20px;
-    height: 20px;
-}
-
-.modal-build-description {
+.modal-mission-description {
     padding: 20px;
     background-color: #2980b9;
 }
 
-.modal-build-mission {
-    padding: 5px;
+.modal-mission-buttons {
+    display: flex;
+}  
+
+.modal-mission-accept {
+    padding: 7px;
     text-align: center;
     background-color: #284e8c;
     color: rgb(255, 255, 255);
     border: 1.5px solid white;
-    width: 28vw;
+    max-width: 25vw;
+    width: 75px;
     margin: auto;
     margin-bottom: 10px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -94,11 +77,30 @@ demás agrupados. */
     border-radius: 12px;
 }
 
-.modal-build-mission:hover {
+.modal-mission-accept:hover {
     color: yellow;
 }
 
-/* Animaciones */
+.modal-mission-exit {
+    padding: 7px;
+    text-align: center;
+    background-color: #284e8c;
+    color: rgb(255, 255, 255);
+    border: 1.5px solid white;
+    max-width: 25vw;
+    width: 75px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: small;
+    transition: background-color 0.2s;
+    border-radius: 12px;
+}
+
+.modal-mission-exit:hover {
+    color: yellow;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -141,12 +143,8 @@ demás agrupados. */
 
 /* Responsive para modal */
 @media (max-width: 768px) {
-    .modal-build-content {
-        width: 95vw;
-        margin: 20px;
-    }
-    
-    .modal-build-mission {
+    .modal-mission-content {
         width: 80vw;
+        margin: 20px;
     }
 }
