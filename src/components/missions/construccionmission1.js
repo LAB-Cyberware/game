@@ -1,8 +1,8 @@
 import React from 'react'
-import "../missions/css/mineriamission1.css"
+import "../missions/css/construccionmission1.css"
 import { useState } from 'react';
 
-function MineriaMission1({ missionCode, onClose }) {
+function ConstruccionMission1({ missionCode, onClose }) {
     const [isClosing, setIsClosing] = useState(false);
     const [isVisible] = useState(true);
 
@@ -13,20 +13,20 @@ function MineriaMission1({ missionCode, onClose }) {
         }, 300);
     };
     
-    const missionmineria1Data = {
-        name: "Extracción de Minerales",
+    const missionconstruccion1Data = {
+        name: "Fabricación de Muebles",
         play: "Jugar",
         options: "Opciones",
         exit: "Salir"
     }
 
-    const currentMineriaMission = missionmineria1Data[missionCode];
+    const currentConstruccionMission = missionconstruccion1Data[missionCode];
 
     return (
-        <div className={`mineria-mission-1
+        <div className={`construccion-mission-1
             ${isVisible ? 'fade-in' : ''} 
             ${isClosing ? 'fade-out' : ''}`} ></div>
     )
 }
 
-export default MineriaMission1
+export default ConstruccionMission1
